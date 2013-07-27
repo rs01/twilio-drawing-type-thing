@@ -6,44 +6,64 @@ var canvas = document.getElementById('game');
 
 var ctx = canvas.getContext('2d');
 
-var button = document.getElementById('button')
+var button = document.getElementById('button');
 
+// middle starting positions
+const startX = 400;
+const startY = 200;
 
-
-	// set the context of the canvas to 2d and store it in the variable ctx
 
 
 	// Fill the screen with a white background
 	ctx.fillStyle = '#ffffff';
 	ctx.fillRect (0, 0, canvas.width, canvas.height);
 	
-	// draw a line
-	//ctx.beginPath();
-	//ctx.moveTo(100, 100);
-	//ctx.lineTo(300,450);
-	//ctx.stroke();
 
-	//ctx.beginPath();
-	//ctx.moveTo(200, 400);
-	//ctx.lineTo(400, 150);
-	//ctx.stroke();
+	//button.addEventListener('click', function() {
 
-	//Display the text 'Hello World!'
-	//var phrase = 'Hello World!';
-	//var mt = ctx.measureText(phrase);
-	//var xcoord = (canvas.width / 2) - (mt.width / 2);
+    var testfig = "U100"; //test input
+    var letter = testfig.substring(0,1);
+    var number = testfig.replace(/[^0-9]/g,'');
 
-	//ctx.font = 'bold 16px Arial, sans-serif';
-	//ctx.fillStyle = '#000000';
-	//ctx.fillText (phrase, xcoord, 200);
-	//ctx.textAlign = 'center';
-	
-	button.addEventListener('click', function() {
-		ctx.beginPath();
-        ctx.moveTo(x1.value, y1.value);
-        ctx.lineTo(x2.value, y2.value);
-        ctx.stroke();}, false);
-        };
+    var curY = 0;
+    var curX = 0;
+
+	switch(letter){
+		case 'U': //up
+		case 'u':
+			ctx.beginPath();
+        	ctx.moveTo(startX + curX, startY + curY);
+        		curY = curY - number;
+        	ctx.lineTo(startX + curX, startY + curY);
+        	ctx.stroke();
+			break;
+        case 'D': //down
+        case 'd':
+        	ctx.beginPath();
+        	ctx.moveTo(startX + curX, startY + curY);
+        		curY = curY + number;
+        	ctx.lineTo(startX + curX, startY + curY);
+        	ctx.stroke();
+			break;
+		case 'L': //left
+		case 'l':
+        	ctx.beginPath();
+        	ctx.moveTo(startX + curX, startY + curY);
+        		curX = curX - number;
+        	ctx.lineTo(startX + curX, startY + curY);
+        	ctx.stroke();
+			break;
+		case 'R': //right
+		case 'r':
+        	ctx.beginPath();
+        	ctx.moveTo(startX + curX, startY + curY);
+        		curX = curX + number;
+        	ctx.lineTo(startX + curX, startY + curY);
+        	ctx.stroke();
+			break;
+		};
+	//};
+};
 
 function clickHandler() {
 	ctx.clearRect (0, 0, canvas.width, canvas.height);
