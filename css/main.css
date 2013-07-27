@@ -1,0 +1,20 @@
+/*
+    /////////////////////////
+    // HTML5 Game Template //
+    /////////////////////////
+
+*/
+
+body {
+	background: #000000;
+}
+
+#game {
+	margin: 0 auto;
+	display: block;
+}
+
+#draw {
+	margin: 0 auto;
+	display: block;
+}
