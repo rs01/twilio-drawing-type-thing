@@ -14,7 +14,17 @@ body {
 	display: block;
 }
 
-#draw {
+#button {
+	margin: 0 auto;
+	display: block;
+}
+
+#firstCoord {
+	margin: 0 auto;
+	display: block;
+}
+
+#secondCood {
 	margin: 0 auto;
 	display: block;
 }
